@@ -79,13 +79,15 @@ namespace WhatsApp
             {
                 if (!sendSocket.Connected)
                 {
-                    IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
-                    remoteEndPoint = new IPEndPoint(ipAddress, port);
-                    sendSocket.Connect(remoteEndPoint);
-                }
+                IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
+                remoteEndPoint = new IPEndPoint(ipAddress, port);
+                Socket sendSocket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
+                sendSocket.Connect(remoteEndPoint);
                 byte[] msg = Encoding.ASCII.GetBytes(message);
                 sendSocket.Send(msg);
+                sendSocket.Shutdown(SocketShutdown.Both);
+                sendSocket.Close();
             }
             catch (Exception ex)
             {
