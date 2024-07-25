@@ -1,4 +1,5 @@
 using System;
+using System.Drawing; // Añadir este using para usar los colores
 using System.Windows.Forms;
 
 namespace WhatsApp
@@ -23,7 +24,7 @@ namespace WhatsApp
         {
             Invoke((Action)(() =>
             {
-                txtMessages.AppendText($"Received: {message}\n");
+                AppendText(txtMessages, $"Received: {message}{Environment.NewLine}", Color.Blue);
             }));
         }
 
@@ -32,14 +33,23 @@ namespace WhatsApp
             if (client != null)
             {
                 client.SendMessage(txtMessage.Text, int.Parse(txtDestPort.Text));
-                txtMessages.AppendText($"Sent: {txtMessage.Text}\n");
+                AppendText(txtMessages, $"Sent: {txtMessage.Text}{Environment.NewLine}", Color.Green);
                 txtMessage.Clear();
             }
         }
 
         private void txtDestPort_TextChanged(object sender, EventArgs e)
         {
+        }
 
+        private void AppendText(RichTextBox box, string text, Color color)
+        {
+            box.SelectionStart = box.TextLength;
+            box.SelectionLength = 0;
+
+            box.SelectionColor = color;
+            box.AppendText(text);
+            box.SelectionColor = box.ForeColor;
         }
     }
 }

@@ -8,7 +8,7 @@
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.TextBox txtDestPort;
         private System.Windows.Forms.TextBox txtPort;
-        private System.Windows.Forms.TextBox txtMessages;
+        private System.Windows.Forms.RichTextBox txtMessages; // Cambiado a RichTextBox
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
 
@@ -28,7 +28,7 @@
             txtMessage = new TextBox();
             txtDestPort = new TextBox();
             txtPort = new TextBox();
-            txtMessages = new TextBox();
+            txtMessages = new RichTextBox(); // Cambiado a RichTextBox
             label1 = new Label();
             label2 = new Label();
             SuspendLayout();
@@ -91,6 +91,7 @@
             txtMessages.ReadOnly = true;
             txtMessages.Size = new Size(437, 230);
             txtMessages.TabIndex = 5;
+            txtMessages.ScrollBars = RichTextBoxScrollBars.Vertical; // Configura el scroll vertical
             // 
             // label1
             // 
