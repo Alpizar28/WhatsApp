@@ -15,7 +15,7 @@ Cada instancia de la aplicación actúa como un cliente de chat único que puede
 - **Git para el control de versiones**
 
 ### Cómo Ejecutar la Aplicación
-1. **Descargar el Repositorio en su maquina**
+1. **Descargar el Repositorio en su computadora**
 
 2. **Entrar a la terminal de su preferencia**:
 
@@ -25,7 +25,7 @@ Cada instancia de la aplicación actúa como un cliente de chat único que puede
    ```
    Por ejemplo:
       ```sh
-   cd <cd "C:\Users\Pablo\OneDrive - Estudiantes ITCR\TEC\Semestre 2\00 Datos\C#\WhatsApp\WhatsApp\WhatsApp">
+   cd "C:\Users\Pablo\OneDrive - Estudiantes ITCR\TEC\Semestre 2\00 Datos\C#\WhatsApp\WhatsApp\WhatsApp"
    ```
 4. **Verificar si el documento WhatsApp.csproj esta en esa ubicacion**
       ```sh
