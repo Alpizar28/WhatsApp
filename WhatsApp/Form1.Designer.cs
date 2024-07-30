@@ -91,7 +91,7 @@
             txtMessages.ReadOnly = true;
             txtMessages.Size = new Size(437, 230);
             txtMessages.TabIndex = 5;
-            txtMessages.ScrollBars = RichTextBoxScrollBars.Vertical; // Configura el scroll vertical
+            txtMessages.ScrollBars = RichTextBoxScrollBars.Vertical; 
             // 
             // label1
             // 
